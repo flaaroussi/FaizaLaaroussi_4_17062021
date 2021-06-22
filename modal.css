@@ -223,9 +223,18 @@ input {
 .formData[data-error-visible="true"]::after {
   opacity: 1;
 }
-.formData[data-error-visible="true"] .text-control {
+.formData .text-control[data-error-visible="true"] {
   border: 2px solid #e54858;
 }
+
+/*Style message d'erreur.*/
+.error {
+  color :#e54858;
+
+}
+
+
+
 /* 
 input[data-error]::after {
     content: attr(data-error);
@@ -296,6 +305,7 @@ input[data-error]::after {
   left: 21%;
   top: 19%;
 }
+/* Fermer  de formulaire */
 .close {
   position: absolute;
   right: 15px;
@@ -321,6 +331,7 @@ input[data-error]::after {
 .close:after {
   transform: rotate(-45deg);
 }
+/*style des deux boutons :je M'inscris et C'est parti*/
 .btn-submit,
 .btn-signup {
   background: #fe142f;
@@ -390,7 +401,7 @@ input[data-error]::after {
   z-index: 99;
 }
 
-/* Hide the items when the select box is closed: */
+/* Hide the items when the select box is closed:Masquer les éléments lorsque la boîte de sélection est fermée : */
 .select-hide {
   display: none;
 }
@@ -399,7 +410,7 @@ input[data-error]::after {
 .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
-/* custom select end */
+/* custom select end fin de sélection personnalisée*/
 .text-label {
   font-weight: normal;
   font-size: 16px;
@@ -446,14 +457,16 @@ input[data-error]::after {
   margin-top: 57px;
   padding: 0;
 }
+/*Style boutton Je M'inscris*/
 .btn-signup {
-  outline: none;
+  outline: none; /* contour et bordure sont supprimés*/
   text-transform: capitalize;
   font-size: 1.3rem;
   padding: 15px 23px;
   margin: 0;
   margin-top: 59px;
 }
+/*Style image*/
 .hero-img {
   grid-column: span 8;
 }
@@ -463,6 +476,11 @@ input[data-error]::after {
   display: block;
   padding: 0;
 }
+.hero-section > .btn-signup { /*si je supprime ce style rien ne change*/
+  display: none;
+}
+
+
 .copyrights {
   color: #fe142f;
   padding: 0;
@@ -470,9 +488,7 @@ input[data-error]::after {
   margin: 60px 0 30px;
   font-weight: bolder;
 }
-.hero-section > .btn-signup {
-  display: none;
-}
+
 footer {
   padding-left: 2vw;
   padding-right: 2vw;
