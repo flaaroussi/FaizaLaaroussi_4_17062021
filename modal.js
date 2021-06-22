@@ -40,7 +40,7 @@ function validate(form){
       prenomElt.dataset.errorVisible = "false"; // annuler le border.
             
       if(prenom == ""){   // si le champ prenom est vide  >> afficher erreur.
-        msgErreur.textContent = "Saisissez votre Nom";
+        msgErreur.textContent = "Saisissez votre Prénom";
         prenomElt.dataset.errorVisible = "true";
 
         return false; //pour arrêter l'action du submit
@@ -58,33 +58,48 @@ function validate(form){
         return false;
       }
 
-      /* code moins long avec un seul message.
-      if(prenom == "" || prenom.length <= 2 || regexNomPrenom.test(prenom) == false){
-        msgErreur.textContent = "Saisissez un prénom qui contient au moins deux caractères de a à z ou A à Z";
-        prenomElt.dataset.errorVisible = "true"; 
+                                /* code moins long avec un seul message.
+                                if(prenom == "" || prenom.length <= 2 || regexNomPrenom.test(prenom) == false){
+                                  msgErreur.textContent = "Saisissez un prénom qui contient au moins deux caractères de a à z ou A à Z";
+                                  prenomElt.dataset.errorVisible = "true"; 
+                                  return false;
+                                } */
+      
+      
+
+  //2- contrôle champ nom
+      
+      let nomElt = form.last;
+      let nom = nomElt.value;
+      let regexNomPrenom = new RegExp(/^[a-zA-Z-éèàâêûîôäëüïöù^]/);
+      let msgErreur = document.getElementById("last_error");
+      msgErreur.textContent = ""; 
+      prenomElt.dataset.errorVisible = "false"; 
+            
+      if(nom == ""){   
+        msgErreur.textContent = "Saisissez votre Nom";
+        prenomElt.dataset.errorVisible = "true";
+        return false; 
+      }
+      
+      else if(nom.length <= 2){ 
+        msgErreur.textContent = "Saisissez un nombre de caracteres superieur à 2";   
+        prenomElt.dataset.errorVisible = "true";
         return false;
-      } */
+      }
+
+      else if( regexNomPrenom.test(nom) == false){
+        msgErreur.textContent = "Saisissez un prénom qui contient des caractères de a à z ou A à Z";
+        prenomElt.dataset.errorVisible = "true";
+        return false;
+      }
+
+      
       
       else {
         return false;
       }   
 
-  //2- contrôle champ nom
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
+      
 }
-
