@@ -95,30 +95,26 @@ function validate(form){
 
       
   
-  //3- contrôle champ E mail 
+  //3- La validation frontale des e-mails consiste à déterminer si la syntaxe est correcte, pas si l'adresse e-mail est valide.
       
       let emailElt = form.email;
-      let email = emailElt.value;
-      let regexNomPrenom = new RegExp(/^[a-zA-Z-éèàâêûîôäëüïöù^]/);
+      let email = emailElt.document.getElementById("email");
+      let regexEmail = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
       let msgErreurEmail = document.getElementById("email_error");
       msgErreurEmail.textContent = ""; 
-      prenomElt.dataset.errorVisible = "false"; 
+      emailElt.dataset.errorVisible = "false"; 
             
       if(email == ""){   
         msgErreurEmail.textContent = "Saisissez votre E mail";
-        prenomElt.dataset.errorVisible = "true";
+        emailElt.dataset.errorVisible = "true";
         return false; 
       }
       
-      else if(nom.length <= 2){ 
-        msgErreurEmail.textContent = "Saisissez un nombre de caracteres superieur à 2";   
-        prenomElt.dataset.errorVisible = "true";
-        return false;
-      }
+      
 
-      else if( regexNomPrenom.test(nom) == false){
+      else if( regexEmail.test(email) == false){
         msgErreurEmail.textContent = "Saisissez un prénom qui contient des caractères de a à z ou A à Z";
-        prenomElt.dataset.errorVisible = "true";
+        emailElt.dataset.errorVisible = "true";
         return false;
       }
 
