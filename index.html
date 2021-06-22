@@ -64,7 +64,7 @@
               
               <div class="formData">
                 <label for="last">Nom</label><br>
-                <input class="text-control" type="text" id="last" name="last"/>
+                <input class="text-control" type="text" id="last" name="last" minlength="2" value="" data-error-visible="false"/>
                 <br>
                 <span class="error" id="last_error"></span>
               </div>
@@ -76,8 +76,9 @@
                 <!--egalement  on peut afficher une boîte de saisie qui mesure 32 caractères de large et dans 
                   laquelle on ne peut saisir des adresses qui ont au moins 3 caractères et au plus 64 
                   caractères par size="32" minlength="3" maxlength="64" -->
-                <input class="text-control" type="email" id="email"name="email"/>
+                <input class="text-control" type="email" id="email" name="email" placeholder="nomutilisateur@example.com" minlength="3" maxlength="64" />
                 <br>
+                <span class="error" id="email_error"></span>
               </div>
 
               <div class="formData">
