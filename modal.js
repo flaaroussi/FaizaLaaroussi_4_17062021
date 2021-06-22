@@ -71,7 +71,7 @@ function validate(form){
       
       let nomElt = form.last;
       let nom = nomElt.value;
-            let msgErreurNom = document.getElementById("last_error");
+      let msgErreurNom = document.getElementById("last_error");
       msgErreurNom.textContent = ""; 
       nomElt.dataset.errorVisible = "false"; 
             
@@ -98,14 +98,15 @@ function validate(form){
   //3- La validation frontale des e-mails consiste à déterminer si la syntaxe est correcte, pas si l'adresse e-mail est valide.
       
       let emailElt = form.email;
-      let email = emailElt.document.getElementById("email");
+      let email = emailElt.value;   
+      let msgErrorEmail = document.getElementById("email_error");
       let regexEmail = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
-      let msgErreurEmail = document.getElementById("email_error");
-      msgErreurEmail.textContent = ""; 
+      
+      msgErrorEmail.textContent = ""; 
       emailElt.dataset.errorVisible = "false"; 
             
       if(email == ""){   
-        msgErreurEmail.textContent = "Saisissez votre E mail";
+        msgErrorEmail.textContent = "Saisissez votre E mail";
         emailElt.dataset.errorVisible = "true";
         return false; 
       }
@@ -113,7 +114,7 @@ function validate(form){
       
 
       else if( regexEmail.test(email) == false){
-        msgErreurEmail.textContent = "Saisissez un prénom qui contient des caractères de a à z ou A à Z";
+        msgErrorEmail.textContent = "Saisissez  *******************";
         emailElt.dataset.errorVisible = "true";
         return false;
       }
@@ -129,3 +130,15 @@ function validate(form){
  
       
 }
+/*
+function verif(f){
+  if (f.nom.value && f.prenom.value && f.sujet.value)
+  return true;
+  var message = "Merci de vérifier les champs suivants:";
+  if (!f.nom.value) message +="n - Nom";
+  if (!f.prenom.value) message +="n - Prénom";
+  if (!f.sujet.value) message +="n - Sujet";
+  alert(message);
+  return false;
+  }
+  */
