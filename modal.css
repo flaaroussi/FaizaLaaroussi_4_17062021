@@ -230,6 +230,7 @@ input {
 /*Style message d'erreur.*/
 .error {
   color :#e54858;
+  font-size: 14px;
 
 }
 

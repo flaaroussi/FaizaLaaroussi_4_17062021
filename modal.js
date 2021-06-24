@@ -155,13 +155,13 @@ function validateTournois (form){
 
       let tournoisElt = form.quantity;
       let tournois = tournoisElt.value;
-      let regexNbreTournois = new RegExp("^[0, 9]/g");   // L'expression [^0-9] est utilisée pour rechercher tout caractère qui n'est PAS un chiffre.
+      let regexNbreTournois = new RegExp("^[0, 9]", "g");   // L'expression [^0-9] est utilisée pour rechercher tout caractère qui n'est PAS un chiffre.
       let msgErrorTournois = document.getElementById("quantity_error");
 
       msgErrorTournois.textContent = ""; 
       tournoisElt.dataset.errorVisible = "false"; 
-
-      if(tournois != "" || regexNbreTournois.test(tournois)){   
+ 
+      if(regexNbreTournois.test(tournois) === false){ // si le champs est vide ou bien la valeur du champs n'est pas un numbre alors return false.
         msgErrorTournois.textContent = "Saisissez un chiffre qui correspond au nombre de vos tournois";
         tournoisElt.dataset.errorVisible = "true";
         return false; 
@@ -174,64 +174,40 @@ function validateTournois (form){
      
 
 
-//5-les boutons radio ne permettent de sélectionner qu'une seule option au sein d'un groupe
-/*
+//5-Sélectionner une seule Ville.
 
-function validateRadio(form){
-      let radioElt = form.location;
-      let radios = form.value;
-      let msgErrorRadio = document.getElementById("quantity_error");
-      msgErrorRadio.textContent = ""; 
-      radioElt.dataset.errorVisible = "false"; 
-      
-      if(radio.value[0].checked || radio.value[1].cheked || radio.value[1].checked)
 
-      for(let i=0; i< radios.length; i++){
-        if (radios[i].cheked){
-          alert ( radios[i].value);
-        }
+function validateVille(form){
+      let radiosElt = form.location;  
+      let msgErrorVille = document.getElementById("radio_error");
+      msgErrorVille.textContent = ""; 
+      let nbrSelectedVille = 0;
 
+      for(let i = 0; i < radiosElt.length; i++){
+        if (radiosElt[i].checked){
+          nbrSelectedVille +=  1;   // on va stocker le resulat true dans la variable isSelectedVille.          
+        }        
       }
-
-      */
-
-
-
-      //CODE
-
-
-
-/**
-var isSelected = function() {
-  var radioObj = document.formName.radioGroupName;
-
-  for(var i=0; i<radioObj.length; i++) {
-      if( radioObj[i].checked ) {
-          return true;
-      }
-  }
-
-  return false;
-};
-
-*/
-
-
-
-
-
-
-// validation du formulaire gouble//
+        if(nbSelectedVille <= 0){
+          msgErrorVille.textContent = "Choisissez une ville"; 
+          return false;
+      } else{
+        return true;
+      }     
+         
+}
+   
+// validation du formulaire globle//
 
 function validate(form){
     let isValidatePrenom = validatePrenom(form);
     let isValidateNom = validateNom(form);
     let isValidateEmail = validateEmail(form);
-    let isValidateTournois = validateTournois(form);
+    let isValidateTournois = validateTournois (form);
     let isValidateDate = validateDate(form);
-     
+    let isValidateVille = validateVille( form);
 
-    if(isValidatePrenom && isValidateNom && isValidateEmail && isValidateDate && isValidateTournois){
+    if(isValidatePrenom && isValidateNom && isValidateEmail && isValidateTournois && isValidateDate  && isValidateVille){
       alert("Formulaire valide");
       return true;                   //si return false le formulaire ne sera pas envoyé.
     }else{
