@@ -136,8 +136,8 @@ function validateEmail (form){
 function validateDate (form){
       let dateNaissanceElt = form.birthdate;
       let dateNaissance = dateNaissanceElt.value;
+      
       let msgErrorDate = document.getElementById("birthdate_error");
-            
       msgErrorDate.textContent = ""; 
       dateNaissanceElt .dataset.errorVisible = "false"; 
 
@@ -155,28 +155,43 @@ function validateTournois (form){
 
       let tournoisElt = form.quantity;
       let tournois = tournoisElt.value;
+      let regexNbreTournois = new RegExp("^[0, 9]/g");   // L'expression [^0-9] est utilisée pour rechercher tout caractère qui n'est PAS un chiffre.
       let msgErrorTournois = document.getElementById("quantity_error");
+
       msgErrorTournois.textContent = ""; 
       tournoisElt.dataset.errorVisible = "false"; 
-      if(typeof(tournois)!== 'number' && tournois.length > 2){
-        msgErrorTournois.textContent = "Saisissez un chiffre de 1 à 99";
+
+      if(tournois != "" || regexNbreTournois.test(tournois)){   
+        msgErrorTournois.textContent = "Saisissez un chiffre qui correspond au nombre de vos tournois";
         tournoisElt.dataset.errorVisible = "true";
-        return false;
+        return false; 
       }
-      return true
+        return true;
 }
+      
+
+
+     
+
 
 //5-les boutons radio ne permettent de sélectionner qu'une seule option au sein d'un groupe
 /*
 
 function validateRadio(form){
       let radioElt = form.location;
-      let radio = form.value[i];
+      let radios = form.value;
       let msgErrorRadio = document.getElementById("quantity_error");
       msgErrorRadio.textContent = ""; 
       radioElt.dataset.errorVisible = "false"; 
-      for(i=0 ;)
+      
       if(radio.value[0].checked || radio.value[1].cheked || radio.value[1].checked)
+
+      for(let i=0; i< radios.length; i++){
+        if (radios[i].cheked){
+          alert ( radios[i].value);
+        }
+
+      }
 
       */
 
