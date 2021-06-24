@@ -87,7 +87,7 @@ function validateNom (form){
         msgErreurNom.textContent = ""; 
         nomElt.dataset.errorVisible = "false";    
               
-        if(nom == ""){   
+        if(nom == ""){    // on teste la valeur de l'element et non pas l'objet.
           msgErreurNom.textContent = "Saisissez votre Nom";
           nomElt.dataset.errorVisible = "true";
           return false; 
@@ -111,34 +111,100 @@ function validateNom (form){
 //3- La validation frontale des e-mails consiste à déterminer si la syntaxe est correcte, pas si l'adresse e-mail est valide.
 
 function validateEmail (form){
-
         let emailElt = form.email;
         let email = emailElt.value;   
         let msgErrorEmail = document.getElementById("email_error");
         let regexEmail = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
-        
         msgErrorEmail.textContent = ""; 
         emailElt.dataset.errorVisible = "false"; 
-              
+
         if(email == ""){   
           msgErrorEmail.textContent = "Saisissez votre E mail";
           emailElt.dataset.errorVisible = "true";
           return false; 
         }
-              
-
         else if( regexEmail.test(email) === false){
           msgErrorEmail.textContent = "Saisissez  *******************";
           emailElt.dataset.errorVisible = "true";
           return false;
         }
-
         return true;
-
-
-
-
 }
+
+//4- Entrée la date de naissance.
+
+function validateDate (form){
+      let dateNaissanceElt = form.birthdate;
+      let dateNaissance = dateNaissanceElt.value;
+      let msgErrorDate = document.getElementById("birthdate_error");
+            
+      msgErrorDate.textContent = ""; 
+      dateNaissanceElt .dataset.errorVisible = "false"; 
+
+      if(!dateNaissance){          //si la valeur de la date de naissance est indefnie alors return false.  
+        msgErrorDate.textContent = "Saisissez votre date de naissance"; 
+        dateNaissanceElt .dataset.errorVisible = "true";
+        return false;
+      }
+      return true;
+}
+
+//4- Validation nbre de tournois.
+
+function validateTournois (form){
+
+      let tournoisElt = form.quantity;
+      let tournois = tournoisElt.value;
+      let msgErrorTournois = document.getElementById("quantity_error");
+      msgErrorTournois.textContent = ""; 
+      tournoisElt.dataset.errorVisible = "false"; 
+      if(typeof(tournois)!== 'number' && tournois.length > 2){
+        msgErrorTournois.textContent = "Saisissez un chiffre de 1 à 99";
+        tournoisElt.dataset.errorVisible = "true";
+        return false;
+      }
+      return true
+}
+
+//5-les boutons radio ne permettent de sélectionner qu'une seule option au sein d'un groupe
+/*
+
+function validateRadio(form){
+      let radioElt = form.location;
+      let radio = form.value[i];
+      let msgErrorRadio = document.getElementById("quantity_error");
+      msgErrorRadio.textContent = ""; 
+      radioElt.dataset.errorVisible = "false"; 
+      for(i=0 ;)
+      if(radio.value[0].checked || radio.value[1].cheked || radio.value[1].checked)
+
+      */
+
+
+
+      //CODE
+
+
+
+/**
+var isSelected = function() {
+  var radioObj = document.formName.radioGroupName;
+
+  for(var i=0; i<radioObj.length; i++) {
+      if( radioObj[i].checked ) {
+          return true;
+      }
+  }
+
+  return false;
+};
+
+*/
+
+
+
+
+
 
 // validation du formulaire gouble//
 
@@ -146,30 +212,16 @@ function validate(form){
     let isValidatePrenom = validatePrenom(form);
     let isValidateNom = validateNom(form);
     let isValidateEmail = validateEmail(form);
+    let isValidateTournois = validateTournois(form);
+    let isValidateDate = validateDate(form);
      
 
-    if(isValidatePrenom && isValidateNom && isValidateEmail){
+    if(isValidatePrenom && isValidateNom && isValidateEmail && isValidateDate && isValidateTournois){
       alert("Formulaire valide");
       return true;                   //si return false le formulaire ne sera pas envoyé.
     }else{
       alert("Formulaire invalide");
       return false;
     }
-
           
 }
-/*
-function verif(f){
-  if (f.nom.value && f.prenom.value && f.email.value && f.birthdate.value )
-  return true;
-  var message = "Merci de vérifier les champs suivants:";
-  if (!f.nom.value) message +="n - Nom";            // si le form ets diff de la valeur du nom alors msg =*******
-  if (!f.prenom.value) message +="n - Prénom";
-  if (!f.email.value) message +="n - email";
-  if (!f.birthdate.value) message +="n - birthdate";
-  if (!f.email.value) message +="n - email";
-
-  alert(message);
-  return false;
-  }
-  */

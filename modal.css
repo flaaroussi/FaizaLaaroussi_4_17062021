@@ -414,7 +414,14 @@ input[data-error]::after {
 .text-label {
   font-weight: normal;
   font-size: 16px;
+  margin-top: 11px;
 }
+  
+fieldset{
+  border: 0;
+}
+
+
 .hero-section {
   min-height: 93vh;
   border-radius: 10px;

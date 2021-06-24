@@ -73,10 +73,6 @@
                 <!--pattern=".+@globex\.com"-->
                 <label for="email">E-mail</label>
                 <br>
-                <!--on peut ajouter value="default@example.com" ou bien placeholder="sophie@example.com" -->
-                <!--egalement  on peut afficher une boîte de saisie qui mesure 32 caractères de large et dans 
-                  laquelle on ne peut saisir des adresses qui ont au moins 3 caractères et au plus 64 
-                  caractères par size="32" minlength="3" maxlength="64" -->
                 <input class="text-control" type="email" id="email" name="email" placeholder="nomutilisateur@example.com" minlength="3" maxlength="64" />
                 <br>
                 <span class="error" id="email_error"></span>
@@ -84,41 +80,49 @@
 
               <div class="formData">
                 <label for="birthdate">Date de naissance</label><br>
-                <input class="text-control" type="date" id="birthdate" name="birthdate"/>
+                <input class="text-control" type="date" id="birthdate" name="birthdate" data-error-visible="false"/>
                 <br>
+                <span class="error" id="birthdate_error"></span>
+
               </div>
 
               <div class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" data-error-visible="false"/>
+                <br>
+                <span class="error" id="quantity_error"></span>
               </div>
 
-              <p class="text-label">Quelles villes ?</p>
+              <!-- l'ajout des éléments <fieldset> et <legend>  permettent de grouper les options à la fois pour la mise en forme et pour 
+                   assurer une meilleure sémantique du document-->
 
-              <!-- l'ajout des éléments <fieldset> et <legend> qui permettent de grouper les options (à la fois pour la mise en forme et pour 
-                la sémantique du document)et pour assurer une meilleure sémantique -->
-              <div class="formData">
+              <fieldset>
+                  <legend class="text-label">Quelles villes ?</legend>
+                  
+                  <div class="formData">
 
-                <input class="checkbox-input" type="radio" id="location1" name="location" value="New York"/>
-                <label class="checkbox-label" for="location1"><span class="checkbox-icon"></span>New York</label>
+                    <input class="checkbox-input" type="radio" id="location1" name="location" value="New York"/>
+                    <label class="checkbox-label" for="location1"><span class="checkbox-icon"></span>New York</label>
 
-                <input class="checkbox-input" type="radio" id="location2" name="location" value="San Francisco"/>
-                <label class="checkbox-label" for="location2"><span class="checkbox-icon"></span>San Francisco</label>
+                    <input class="checkbox-input" type="radio" id="location2" name="location" value="San Francisco"/>
+                    <label class="checkbox-label" for="location2"><span class="checkbox-icon"></span>San Francisco</label>
 
-                <input class="checkbox-input" type="radio" id="location3" name="location" value="Seattle"/>
-                <label class="checkbox-label" for="location3"><span class="checkbox-icon"></span>Seattle</label>
+                    <input class="checkbox-input" type="radio" id="location3" name="location" value="Seattle"/>
+                    <label class="checkbox-label" for="location3"><span class="checkbox-icon"></span>Seattle</label>
 
-                <input class="checkbox-input" type="radio" id="location4" name="location" value="Chicago"/>
-                <label class="checkbox-label" for="location4"><span class="checkbox-icon"></span>Chicago</label>
+                    <input class="checkbox-input" type="radio" id="location4" name="location" value="Chicago"/>
+                    <label class="checkbox-label" for="location4"><span class="checkbox-icon"></span>Chicago</label>
 
-                <input class="checkbox-input" type="radio" id="location5" name="location" value="Boston"/>
-                <label class="checkbox-label" for="location5"><span class="checkbox-icon"></span>Boston</label>
+                    <input class="checkbox-input" type="radio" id="location5" name="location" value="Boston"/>
+                    <label class="checkbox-label" for="location5"><span class="checkbox-icon"></span>Boston</label>
 
-                <input class="checkbox-input" type="radio" id="location6" name="location" value="Portland"/>
-                <label class="checkbox-label" for="location6"><span class="checkbox-icon"></span>Portland</label>
+                    <input class="checkbox-input" type="radio" id="location6" name="location" value="Portland"/>
+                    <label class="checkbox-label" for="location6"><span class="checkbox-icon"></span>Portland</label>
+                    <br>
+                    <span class="error" id="radio_error"></span>
 
-              </div>
-
+                   </div>
+              </fieldset>
               <div class="formData">
 
                 <input class="checkbox-input" type="checkbox" id="checkbox1" checked />
