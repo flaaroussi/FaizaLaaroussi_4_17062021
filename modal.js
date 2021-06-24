@@ -155,7 +155,7 @@ function validateTournois (form){
 
       let tournoisElt = form.quantity;
       let tournois = tournoisElt.value;
-      let regexNbreTournois = new RegExp("^[0, 9]", "g");   // L'expression [^0-9] est utilisée pour rechercher tout caractère qui n'est PAS un chiffre.
+      let regexNbreTournois = new RegExp("^[0-9]+$", "g");   // L'expression [^0-9] est utilisée pour rechercher tout caractère qui n'est PAS un chiffre.
       let msgErrorTournois = document.getElementById("quantity_error");
 
       msgErrorTournois.textContent = ""; 
@@ -170,31 +170,44 @@ function validateTournois (form){
 }
       
 
-
-     
-
-
 //5-Sélectionner une seule Ville.
-
 
 function validateVille(form){
       let radiosElt = form.location;  
       let msgErrorVille = document.getElementById("radio_error");
       msgErrorVille.textContent = ""; 
-      let nbrSelectedVille = 0;
+      let nbrSelectedVille = 0;      // on va stocker le resulat 0 (ou bien false) dans la variable nbrSelectedVille.
 
       for(let i = 0; i < radiosElt.length; i++){
         if (radiosElt[i].checked){
-          nbrSelectedVille +=  1;   // on va stocker le resulat true dans la variable isSelectedVille.          
+          nbrSelectedVille +=  1;             
         }        
       }
-        if(nbSelectedVille <= 0){
+        if(nbrSelectedVille <= 0){
           msgErrorVille.textContent = "Choisissez une ville"; 
           return false;
       } else{
         return true;
       }     
          
+}
+
+// 6 -checker conditions generales.
+function validateCondGene (form){
+
+      let condGeneElt = form.conditions_generales;
+      let msgErrorCg = document.getElementById("conditions_generales_error");
+      msgErrorCg.textContent = ""; 
+      condGeneElt.dataset.errorVisible = "false";
+      
+
+      if(!condGeneElt.checked){
+        alert('p');
+        msgErrorCg.textContent = "Cocher les conditions générales d'utilisation est obligatoire";
+        condGeneElt.dataset.errorVisible = "true";
+        return false;
+      }
+        return true;
 }
    
 // validation du formulaire globle//
@@ -206,8 +219,8 @@ function validate(form){
     let isValidateTournois = validateTournois (form);
     let isValidateDate = validateDate(form);
     let isValidateVille = validateVille( form);
-
-    if(isValidatePrenom && isValidateNom && isValidateEmail && isValidateTournois && isValidateDate  && isValidateVille){
+    let isValidateCg = validateCondGene(form);
+    if(isValidatePrenom && isValidateNom && isValidateEmail && isValidateTournois && isValidateDate  && isValidateVille && isValidateCg){
       alert("Formulaire valide");
       return true;                   //si return false le formulaire ne sera pas envoyé.
     }else{

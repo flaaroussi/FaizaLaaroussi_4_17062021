@@ -223,8 +223,20 @@ input {
 .formData[data-error-visible="true"]::after {
   opacity: 1;
 }
+
 .formData .text-control[data-error-visible="true"] {
   border: 2px solid #e54858;
+}
+
+/*****************************************/
+
+.checkbox-input[data-error-visible="true"] + .checkbox2-label .checkbox-icon {
+  border: 2px solid #e54858;
+}
+
+
+.checkbox-input:checked + .checkbox2-label .checkbox-icon {
+  background: #279e7a;
 }
 
 /*Style message d'erreur.*/
