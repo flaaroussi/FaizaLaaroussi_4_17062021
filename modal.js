@@ -221,10 +221,11 @@ function validate(form){
     let isValidateVille = validateVille( form);
     let isValidateCg = validateCondGene(form);
     if(isValidatePrenom && isValidateNom && isValidateEmail && isValidateTournois && isValidateDate  && isValidateVille && isValidateCg){
-      alert("Formulaire valide");
+      doCloseModal();              // fonction qui permet de fermer le formulaire.
+      alert("Merci ! Votre réservation a été reçue.");
       return true;                   //si return false le formulaire ne sera pas envoyé.
     }else{
-      alert("Formulaire invalide");
+      
       return false;
     }
           
