@@ -68,6 +68,7 @@ img {
 .topnav .icon {
   display: none;
 }
+/* Responsive : version  tablette  */
 
 @media screen and (max-width: 768px) {
   .topnav a {display: none;}
@@ -319,7 +320,7 @@ input[data-error]::after {
   left: 21%;
   top: 19%;
 }
-/* Fermer  de formulaire */
+/* Fermer  le formulaire */
 .close {
   position: absolute;
   right: 15px;
