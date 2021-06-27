@@ -8,8 +8,11 @@ firstNameElt.addEventListener("input",function(e){
 });
 
 /**
- * contrôle champ Prénom.
- */
+  * Fonction qui permet de valider le prénom du contact.
+  * @param {*} prenomElt
+  * @return booleen :  true = le nom est valide, false = le nom est invalide 
+  */
+
  function validatePrenom(prenomElt) {
    let prenom = prenomElt.value;
    //RegExp :ecrire une chaine avec au moins 3 lettres maj ou bien min.
@@ -38,7 +41,7 @@ lastNameElt.addEventListener("input",function(e){
 
  /**
   * Fonction qui permet de valider le nom du contact.
-  * @param {*} form  : formulaire contact
+  * @param {*} nomElt
   * @return booleen :  true = le nom est valide, false = le nom est invalide 
   */
  function validateNom(nomElt) {
@@ -70,7 +73,7 @@ lastNameElt.addEventListener("input",function(e){
  
  /**
   * Fonction qui permet de valider l'e-mail .
-  * @param {*} form : formulaire contact
+  * @param {*} emailElt
   * @return booleen :  true = l'adresse e-mail est valide, false = l'adresse e-mail est invalide.
   */
  
@@ -100,7 +103,7 @@ lastNameElt.addEventListener("input",function(e){
 
  /**
   * Fonction qui permet de valider la date de naissance .
-  * @param {*} form : formulaire contact
+  * @param {*} dateNaissanceElt
   * @return booleen :  true = la date de naissance est valide, false = la date de naissance est invalide.
   */
  
@@ -155,7 +158,7 @@ tournoisElt.addEventListener("input",function(e){
  
  /**
   * Fonction qui permet de choisir une ville .
-  * @param {*} form : formulaire contact
+  * @param {*} radiosElt 
   * @return booleen :  true = une ville est cochée, false = aucune ville n'est choisie.
   */
  
@@ -180,7 +183,7 @@ tournoisElt.addEventListener("input",function(e){
  
  /**
   * Fonction qui permet de controler les conditions générales .
-  * @param {*} form : formulaire contact
+  * @param {*} condGeneElt 
   * @return booleen :  true = case conditions générales est cochée, false = case n'est pas cochée.
   */
  function validateCondGene(condGeneElt) { 
