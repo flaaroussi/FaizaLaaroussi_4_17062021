@@ -231,11 +231,14 @@ input {
   opacity: 1;
 }
 
+/*Traitement style message d'erreur*/
 .formData .text-control[data-error-visible="true"] {
   border: 2px solid #e54858;
 }
-
-/*****************************************/
+/*Traitement style saisie correcte*/
+.formData .text-control[data-error-visible="false"] {
+  border: 2px solid #279e7a;
+}
 
 .checkbox-input[data-error-visible="true"] + .checkbox2-label .checkbox-icon {
   border: 2px solid #e54858;
