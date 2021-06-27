@@ -37,6 +37,12 @@ img {
 }
 .header-logo {
     float: left;
+    
+}
+.header-logo img{
+  width: auto;
+  height: auto;
+
 }
 .main-navbar {
     float: right;
@@ -68,7 +74,7 @@ img {
 .topnav .icon {
   display: none;
 }
-/* Responsive : version  tablette  */
+/* Responsive design */
 
 @media screen and (max-width: 768px) {
   .topnav a {display: none;}
@@ -196,6 +202,7 @@ label {
   font-weight: normal;
   display: inline-block;
   margin-bottom: 11px;
+  margin-top: 11px;
 }
 input {
   padding: 8px;
@@ -428,8 +435,8 @@ input[data-error]::after {
 /* custom select end fin de sélection personnalisée*/
 .text-label {
   font-weight: normal;
-  font-size: 16px;
-  margin-top: 11px;
+  font-size: 17px;
+  padding-top: 11px;
 }
   
 fieldset{

@@ -19,7 +19,7 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 function launchModal() {
   modalbg.style.display = "block";
 //annuler le scroll du body lors de l'ouverture du formulaire.
-  document.body.style.overflow ="hidden";
+  //document.body.style.overflow ="hidden";
 }
 //Fermer le formulaire = modal.
 const modalClose = document.querySelector(".close");
@@ -34,7 +34,7 @@ function doCloseModal() {
 
 
 
-//validation du formulaire
+//validation du formulaire.
 
 
 /**
@@ -217,6 +217,7 @@ function validate(form) {
   let isValidateVille = validateVille(form);
   let isValidateCg = validateCondGene(form);
   if (isValidatePrenom && isValidateNom && isValidateEmail && isValidateTournois && isValidateDate && isValidateVille && isValidateCg) {
+    
     doCloseModal();              // fonction qui permet de fermer le formulaire.
     alert("Merci ! Votre réservation a été reçue.");
     return true;                   //si return false le formulaire ne sera pas envoyé.
