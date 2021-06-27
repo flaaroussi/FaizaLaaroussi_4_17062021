@@ -1,10 +1,15 @@
 __Formation <a href="https://openclassrooms.com/fr/paths/314-developpeur-front-end">openclassrooms | Parcours Développeur Front-End</a>__
-<p>Projet N° 4 :création d'une landing page avec Javascript</p>
+<p>Projet N° 4 : Création d'une landing page avec Javascript</p>
 <p>Lien du site : https://flaaroussi.github.io/FaizaLaaroussi_4_17062021/</p> 
+
+
+## Compétances acquises dans ce projet :
+   * Apprenez à programmer avec Javascript
+   * Ecrivez du JS pour le web
 
 ## Technologies:
    * HTML5
-   * SCSS
+   * CSS
    * Javascript
 
 ## Compatibilité :
@@ -13,6 +18,3 @@ __Formation <a href="https://openclassrooms.com/fr/paths/314-developpeur-front-e
       - <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fflaaroussi.github.io%2FFaizaLaaroussi_4_17062021%2F">HTML</a>
       - <a href="http://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fflaaroussi.github.io%2FFaizaLaaroussi_4_17062021%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=fr">CSS</a>
       
-## Compétances acquises dans ce projet :
-   * Apprenez à programmer avec Javascript
-   * Ecrivez du JS pour le web
