@@ -98,8 +98,6 @@ img {
   }
 }
 
-
-
  @media screen and (max-width: 540px) {
   .topnav a {display: none;}
   .topnav a.icon {
@@ -146,7 +144,6 @@ main {
 }
 
 /* Modal form */
-
 .button {
   background: #fe142f;
   margin-top: 0.5em;
@@ -160,6 +157,7 @@ main {
 .button:hover {
   background: #3876ac;
 }
+
 
 .smFont {
   font-size: 16px;
@@ -354,6 +352,8 @@ input[data-error]::after {
   transform: rotate(-45deg);
 }
 /*style des deux boutons :je M'inscris et C'est parti*/
+
+
 .btn-submit,
 .btn-signup {
   background: #fe142f;
