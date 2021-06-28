@@ -1,6 +1,8 @@
 //validation du formulaire.
 
-//attaché un evenement input à la fonction validate
+/**
+  * Attachement de l'evenement contrôle pendant la saisie à l'input nom.
+  */
 
 let firstNameElt = document.getElementById("first");
 firstNameElt.addEventListener("input",function(e){
@@ -18,8 +20,10 @@ firstNameElt.addEventListener("input",function(e){
    //RegExp :ecrire une chaine avec au moins 3 lettres maj ou bien min.
    let regexNomPrenom = new RegExp("^[a-zA-Z]{2,}$"); 
    let msgErreurPrenom = document.getElementById("first_error");
-   msgErreurPrenom.textContent = ""; // le message d'erreur doit etre vide à chaque validation à chaque click sur le boutton C'est parti.
-   prenomElt.dataset.errorVisible = "false"; // annuler le border.
+   // le message d'erreur doit etre vide à chaque validation à chaque click sur le boutton C'est parti.
+   msgErreurPrenom.textContent = ""; 
+   // annuler le border.
+   prenomElt.dataset.errorVisible = "false"; 
  
     if (regexNomPrenom.test(prenom) === false) {
      msgErreurPrenom.textContent = "Saisissez un prénom qui contient au moins deux caractères alphabétiques";
@@ -32,7 +36,7 @@ firstNameElt.addEventListener("input",function(e){
  }
  
 /**
-  * Attachement de l'evenement à l'input nom.(controler pendant la saisie.)
+  * Attachement de l'evenement contrôle pendant la saisie à l'input prénom.
   */
 let lastNameElt = document.getElementById("last");
 lastNameElt.addEventListener("input",function(e){
@@ -64,7 +68,7 @@ lastNameElt.addEventListener("input",function(e){
 
 
  /**
-  * Attachement de l'evenement à l'input email.(controler pendant la saisie.)
+  * Attachement de l'evenement contrôle pendant la saisie à l'input email.
   */
    let emailElt = document.getElementById("email");
    emailElt.addEventListener("input",function(e){
@@ -94,7 +98,7 @@ lastNameElt.addEventListener("input",function(e){
 
 
  /**
-  * Attachement de l'evenement à l'input date de naissance.(controler pendant la saisie.)
+  * Attachement de l'evenement contrôle pendant la saisie à l'input date de naissance.
   */
  let dateNaissanceElt = document.getElementById("birthdate");
  dateNaissanceElt .addEventListener("input",function(e){
@@ -122,7 +126,7 @@ lastNameElt.addEventListener("input",function(e){
  }
  
 /**
- * Attachement de l'evenement à l'input nombre de tournois.(controler pendant la saisie.)
+ * Attachement de l'evenement contrôle pendant la saisie à l'input nombre de tournois.
  */
 let tournoisElt = document.getElementById("quantity");
 tournoisElt.addEventListener("input",function(e){
@@ -144,16 +148,18 @@ tournoisElt.addEventListener("input",function(e){
    // Par défaut vider le message d'erreur
    msgErrorTournois.textContent = "";
    
-   // Par défaut on affecte à l'attribut data-error-visible la valeur = false pour supprimer le style d'erreur
+   // Par défaut on affecte à l'attribut data-error-visible la valeur = false pour supprimer le style d'erreur.
    tournoisElt.dataset.errorVisible = "false";
- 
-   if (regexNbreTournois.test(tournois) === false) { // si le champs est vide ou bien la valeur du champs n'est pas un numbre alors return false >> erreur.
+   // si le champs est vide ou bien la valeur du champ n'est pas un numbre alors return false >> erreur.
+   if (regexNbreTournois.test(tournois) === false) { 
      msgErrorTournois.textContent = "Saisissez un chiffre qui correspond au nombre de vos tournois";
      tournoisElt.dataset.errorVisible = "true";
      return false;
    }
    return true;
  }
+ 
+
  
  
  /**
