@@ -1,7 +1,7 @@
 //validation du formulaire.
 
 /**
-  * Attachement de l'evenement contrôle pendant la saisie à l'input nom.
+  * Attachement de l'evenement contrôle pendant la saisie dans'input nom.
   */
 
 let firstNameElt = document.getElementById("first");
@@ -36,7 +36,7 @@ firstNameElt.addEventListener("input",function(e){
  }
  
 /**
-  * Attachement de l'evenement contrôle pendant la saisie à l'input prénom.
+  * Attachement de l'evenement contrôle pendant la saisie dans l'input prénom.
   */
 let lastNameElt = document.getElementById("last");
 lastNameElt.addEventListener("input",function(e){
@@ -68,7 +68,7 @@ lastNameElt.addEventListener("input",function(e){
 
 
  /**
-  * Attachement de l'evenement contrôle pendant la saisie à l'input email.
+  * Attachement de l'evenement contrôle pendant la saisie dans l'input email.
   */
    let emailElt = document.getElementById("email");
    emailElt.addEventListener("input",function(e){
@@ -98,7 +98,7 @@ lastNameElt.addEventListener("input",function(e){
 
 
  /**
-  * Attachement de l'evenement contrôle pendant la saisie à l'input date de naissance.
+  * Attachement de l'evenement contrôle pendant la saisie dans l'input date de naissance.
   */
  let dateNaissanceElt = document.getElementById("birthdate");
  dateNaissanceElt .addEventListener("input",function(e){
@@ -126,7 +126,7 @@ lastNameElt.addEventListener("input",function(e){
  }
  
 /**
- * Attachement de l'evenement contrôle pendant la saisie à l'input nombre de tournois.
+ * Attachement de l'evenement contrôle pendant la saisie dans l'input nombre de tournois.
  */
 let tournoisElt = document.getElementById("quantity");
 tournoisElt.addEventListener("input",function(e){
@@ -159,7 +159,23 @@ tournoisElt.addEventListener("input",function(e){
    return true;
  }
  
+/**
+  * Attachement de l'evenement checked quand on choisit une ville.
+  */
+ 
+ let villeCheckbox = document.querySelectorAll("div.formData input[name='location']");
 
+  for( let i = 0;i < villeCheckbox.length; i++){
+    
+    villeCheckbox[i].addEventListener("click",function(e){
+      validateVille(villeCheckbox);    
+    })
+
+
+  }
+  
+
+ 
  
  
  /**
@@ -186,7 +202,13 @@ tournoisElt.addEventListener("input",function(e){
    }
  
  }
- 
+ /**
+  * Attachement de l'evenement checked quand on coche la case des conditions générales.
+  */
+  let conditionsGeneral = document.getElementById("checkbox1");
+  conditionsGeneral.addEventListener("change",function(e){
+    validateCondGene(conditionsGeneral);
+   })
  /**
   * Fonction qui permet de controler les conditions générales .
   * @param {*} condGeneElt 
@@ -198,7 +220,7 @@ tournoisElt.addEventListener("input",function(e){
    condGeneElt.dataset.errorVisible = "false";
  
    if (!condGeneElt.checked) {
-     msgErrorCg.textContent = "Cocher les conditions générales d'utilisation est obligatoire";
+     msgErrorCg.textContent = "Il est obligatoire de cocher les conditions générales d'utilisation";
      condGeneElt.dataset.errorVisible = "true";
      return false;
    }

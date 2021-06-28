@@ -12,7 +12,7 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 
-// launch modal event :ouvrir le forlulaire.
+// launch modal event :ouvrir le formulaire.
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // launch modal form

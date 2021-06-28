@@ -30,6 +30,7 @@
     
   
     <main>
+      <!--Titre et informations-->
       <div class="hero-section">
         <div class="hero-content">
           <h1 class="hero-headline">Marathon national<br>de jeux vidéos</h1>
@@ -40,14 +41,15 @@
         <div class="hero-img"><img src="images/bg_img.jpg" alt="img" /></div>
         <button class="btn-signup modal-btn">je m'inscris</button>
       </div>
-
+      
       <div class="bground">
+        <!--Fenêtre du formulaire de reservation-->
         <div class="content">
 
           <span class="close"></span>
 
           <div class="modal-body">
-
+            <!--Formulaire de reservation-->
             <form name="reserve" id="reserve" action="index.html" method="get" onsubmit="return validate(this);">
 
               <div class="formData" >
@@ -120,10 +122,7 @@
                    </div>
               </fieldset>
               <div class="formData">
-                <!-- il faut ajouter l'attribut name -->
-                
                 <input class="checkbox-input" type="checkbox" id="checkbox1" name="conditions_generales"  data-error-visible=""/>
-                <!-- l'atttribut required doit etre ajouté dans l'input et non pas dans un label -->
                 <label class="checkbox2-label" for="checkbox1">
                     <span class="checkbox-icon" ></span>
                     J'ai lu et accepté les conditions d'utilisation.
