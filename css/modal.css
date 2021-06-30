@@ -579,7 +579,7 @@ footer {
   }
 }
 
-/** Style message de conformitaion après validation du formaulire */
+/** Style message de conformitaion  */
 .confirmation-overlay {
   display: none;
   background-color: rgba(35, 35, 35, .5);
