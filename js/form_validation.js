@@ -241,11 +241,11 @@ tournoisElt.addEventListener("input",function(e){
    let isValidateCg = validateCondGene(form.conditions_generales);
 
 
-   if (isValidatePrenom && isValidateNom && isValidateEmail && isValidateTournois && isValidateDate && isValidateVille && isValidateCg) {
-     
+   if (isValidatePrenom && isValidateNom && isValidateEmail && isValidateTournois && isValidateDate && isValidateVille && isValidateCg) {     
      doCloseModal();              // fonction qui permet de fermer le formulaire.
-     alert("Merci ! Votre réservation a été reçue.");
-     return true;                   //si return false le formulaire ne sera pas envoyé.
+     openConfirmationMessage(); // ouvrir le message de confirmation
+     form.reset() // vider le formulaire
+     return false;  
    } else {
  
      return false;
