@@ -176,8 +176,6 @@ tournoisElt.addEventListener("input",function(e){
   
 
  
- 
- 
  /**
   * Fonction qui permet de choisir une ville .
   * @param {*} radiosElt 
@@ -220,7 +218,7 @@ tournoisElt.addEventListener("input",function(e){
    condGeneElt.dataset.errorVisible = "false";
  
    if (!condGeneElt.checked) {
-     msgErrorCg.textContent = "Il est obligatoire de cocher les conditions générales d'utilisation";
+     msgErrorCg.textContent = "Cochez les conditions générales d'utilisation est obligatoire";
      condGeneElt.dataset.errorVisible = "true";
      return false;
    }

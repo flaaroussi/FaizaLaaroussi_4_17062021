@@ -21,12 +21,16 @@ function launchModal() {
 //annuler le scroll du body lors de l'ouverture du formulaire.
   //document.body.style.overflow ="hidden";
 }
+
+
 //Fermer le formulaire = modal.
 const modalClose = document.querySelector(".close");
 modalClose.addEventListener("click", doCloseModal);
 
 function doCloseModal() {
   modalbg.style.display = "none";
+
+  
 //garder le scroll du body quand le formulaire est fermé.  
   document.body.style.overflow ="auto";
 }
