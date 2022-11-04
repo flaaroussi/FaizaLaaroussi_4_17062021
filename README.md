@@ -1,6 +1,6 @@
 __Formation <a href="https://openclassrooms.com/fr/paths/314-developpeur-front-end">openclassrooms | Parcours Développeur Front-End</a>__
 <p>Projet N° 4 : Création d'une landing page avec Javascript</p>
-<p>Lien du site : https://flaaroussi.github.io/FaizaLaaroussi_4_17062021/</p> 
+<p>Lien du site : https://flaaroussi.github.io/GameOn/</p> 
 
 
 ## Compétances acquises dans ce projet :
